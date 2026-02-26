@@ -1,0 +1,8 @@
+# Ignore ALL non-hidden files and directories in $HOME
+/*
+
+# Allow all files/directories inside .config
+!.config/
+
+# Exclude the Brave directory
+.config/BraveSoftware/
