@@ -1,0 +1,23 @@
+# OFFICIAL GMAIL
+
+# Receive options
+set imap_user = "`pass show official/gmail | grep '^user:' | cut -d' ' -f2- | cut -d'@' -f1`"
+set imap_pass="`pass show app-passwords/official_gmail_k9 | head -n 1`"
+set folder = "imaps://"$imap_user"@imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set record        = ""                     # Don't save sent mail manually
+
+mailboxes +INBOX \
+          +[Gmail]/Sent\ Mail\
+          +[Gmail]/Drafts\
+
+# Send options
+set smtp_url = "smtp://$imap_user@smtp.gmail.com:587/"
+set smtp_user = $imap_user
+set smtp_pass = $imap_pass
+set from = "`pass show official/gmail | grep '^user:' | cut -d' ' -f2-`"
+set realname = "Linn Abraham"
+
+set header_cache=~/.cache/neomutt/headers/official
+set message_cachedir=~/.cache/neomutt/bodies/official

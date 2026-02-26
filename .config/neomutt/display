@@ -1,0 +1,107 @@
+# -*-muttrc-*-
+# status bar
+set status_format="-%r- %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Size: %l?]---(%s/%S)-%>-(%P)---"
+set status_on_top=yes
+# index_format
+set index_format="%4C %Z %{%b %d} %-23.23L (%?l?%4l&%4c?) %s"
+
+# attach format
+# set attach_format"%u%D%I %t%4n %T%.40d%> [%.7m/%.10M, %.6e%?C?, %C?, %s] "
+
+# What headers to show
+ignore *
+unignore from: date subject to cc reply-to:
+unignore resent- x-resent
+
+# What order to show them
+unhdr_order *
+hdr_order Date: From: To: Reply-To: Cc: Subject:
+
+set sort = reverse-date-received
+
+# Pager
+set pager_context=4  
+set pager_index_lines=10
+set pager_stop
+unset markers
+
+
+## ZENBURN COLOR SCHEME FOR MUTT 
+# general-doesn't-fit stuff
+color normal     color188 color237
+color error      color115 color236
+color markers    color142 color238
+color tilde      color108 color237
+color status     color144 color234
+
+# index stuff
+color indicator  color108 color236
+color tree       color109 color237
+color index      color188 color237 ~A
+color index      color188 color237 ~N
+color index      color188 color237 ~O
+color index      color174 color237 ~F
+color index      color174 color237 ~D
+# source "$HOME/.config/neomutt/zenburn.neomuttrc"
+
+# header stuff
+color hdrdefault color223 color237
+color header     color223 color237 "^Subject"
+
+# gpg stuff
+color body       color188 color237 "^gpg: Good signature.*"
+color body       color115 color236 "^gpg: BAD signature.*"
+color body       color174 color237 "^gpg: Can't check signature.*"
+color body       color174 color237 "^-----BEGIN PGP SIGNED MESSAGE-----"
+color body       color174 color237 "^-----BEGIN PGP SIGNATURE-----"
+color body       color174 color237 "^-----END PGP SIGNED MESSAGE-----"
+color body       color174 color237 "^-----END PGP SIGNATURE-----"
+color body       color174 color237 "^Version: GnuPG.*"
+color body       color174 color237 "^Comment: .*"
+
+# url, email and web stuff
+color body       color174 color237 "(finger|ftp|http|https|news|telnet)://[^ >]*"
+color body       color174 color237 "<URL:[^ ]*>"
+color body       color174 color237 "www\\.[-.a-z0-9]+\\.[a-z][a-z][a-z]?([-_./~a-z0-9]+)?"
+color body       color174 color237 "mailto: *[^ ]+\(\\i?subject=[^ ]+\)?"
+color body       color174 color237 "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+
+# misc body stuff
+color attachment color174 color237 #Add-ons to the message
+color signature  color223 color237
+
+# quote levels
+color quoted     color108 color237
+color quoted1    color116 color237
+color quoted2    color247 color237
+color quoted3    color108 color237
+color quoted4    color116 color237
+color quoted5    color247 color237
+color quoted6    color108 color237
+color quoted7    color116 color237
+color quoted8    color247 color237
+color quoted9    color108 color237
+
+# general-doesn't-fit stuff
+color normal     color188 color237
+color error      color115 color236
+color markers    color142 color238
+color tilde      color108 color237
+color status     color144 color234
+
+# my color definitions
+color index      color188 color237 ~A
+# color index color237 color188  ~A
+color indicator color132 color236
+color sidebar_highlight red default
+color sidebar_divider brightblack black
+color index_subject color167 color237 ~N
+# color index_subject color8 black ~N
+# color index_author color64 color237 "~N"
+color index_author color64 color237 "~N"
+
+# Tagged mail is highlighted:
+color index brightyellow blue "~T"
+color index_author brightred blue "~T"
+color index_subject brightcyan blue "~T"
+

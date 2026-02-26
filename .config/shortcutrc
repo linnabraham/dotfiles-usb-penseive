@@ -1,0 +1,6 @@
+alias cs="cd $HOME/.local/share/linn/cheatsheets/personal/ && ls "
+alias cf="cd ~/.config && ls "
+alias cfa='$EDITOR $HOME/.bash_aliases'
+alias cfm='$EDITOR $HOME/.config/neomutt/neomuttrc'
+alias cfn='$EDITOR $HOME/.config/nvim/init.vim'
+alias cfz='$EDITOR $HOME/.zshrc'

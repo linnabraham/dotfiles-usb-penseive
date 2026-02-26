@@ -1,0 +1,95 @@
+# vim: filetype=neomuttrc
+set autoedit = no
+set xterm_set_titles=yes
+
+# Unread mail stay unread until read
+set mark_old = no		
+set forward_attachments = yes
+
+# display non-ASCII characters in headers
+set rfc2047_parameters=yes
+
+# disable the audible bell when new mail arrives
+set beep_new = no
+
+# new feature (neomutt-20241212) - compose preview
+set compose_show_preview = yes
+
+# General bindings
+bind  pager <backspace> previous-line
+bind  pager <enter>     next-line
+bind  pager \e[1~       top
+bind  pager \e[4~       bottom
+
+bind  index <backspace> previous-entry
+bind  index -           previous-entry
+bind  index \eOm        previous-entry
+bind  index +           next-entry
+bind  index \eOk        next-entry
+bind  index \eOM        display-message
+bind  index \e[H        first-entry
+bind  index \e[F        last-entry
+bind  index \e[1~       first-entry
+bind  index \e[4~       last-entry
+
+bind  alias   <space>   select-entry
+bind  alias   x         exit
+bind  attach  x         exit
+bind  browser x         exit
+
+# never forget to attach an attachment
+set abort_noattach = ask-yes
+set abort_noattach_regex = "\\<attach(|ed|ments?)\\>"
+
+# keep the IMAP connection alive by polling intermittently (time in seconds).
+set imap_keepalive = 300
+
+# how often to check for new mail (time in seconds).
+set mail_check = 120
+
+set message_cache_clean = yes
+
+# DISPLAY
+source "$HOME/.config/neomutt/display" 
+
+macro index,pager <F7> "\
+<enter-command> set my_pipe_decode=\$pipe_decode my_wait_key=\$wait_key \
+pipe_decode=no wait_key=no<enter>\
+<pipe-message> viewhtmlmsg --keep=0<enter>\
+<enter-command> set pipe_decode=\$my_pipe_decode wait_key=\$my_wait_key \
+&my_pipe_decode &my_wait_key<enter>\
+" "view HTML in browser"
+
+set sidebar_format = "%B%<F? [%F]>%* %<N?%N/>%S"
+# set mail_check_stats
+bind index,pager B sidebar-toggle-visible
+
+# Previous Mailbox
+bind index,pager J sidebar-next
+# Next Mailbox
+bind index,pager K sidebar-prev
+# Ctrl-O – Open Highlighted Mailbox
+bind index,pager \CO sidebar-open
+
+bind pager j next-line
+bind pager k previous-line
+
+bind index j next-entry
+bind index k previous-entry
+
+set mailcap_path = $HOME/.config/neomutt/mailcap
+# automatically show html (mailcap uses lynx)
+auto_view text/html
+## OFFICIAL-GMAIL
+source "~/.config/neomutt/official"
+# Here we use the $folder variable that has just been set in the sourced file.
+# We must set it right now otherwise the 'folder' variable will change in the next sourced file.
+folder-hook $folder 'source ~/.config/neomutt/official'
+
+## IUCAA
+source "~/.config/neomutt/iucaa"
+folder-hook $folder 'source ~/.config/neomutt/iucaa'
+
+## Personal-Gmail
+source "~/.config/neomutt/personal"
+folder-hook $folder 'source ~/.config/neomutt/personal'

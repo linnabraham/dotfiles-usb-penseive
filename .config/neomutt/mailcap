@@ -1,0 +1,10 @@
+text/plain; $EDITOR %s ;
+# text/html; lynx -assume_charset=%{charset} -nolist -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput;
+text/html; w3m -dump -cols 1024 -T text/html %s; copiousoutput; # display tables in html
+image/*; nsxiv %s ;
+video/*; setsid mpv --quiet %s &; copiousoutput
+audio/*; mpv %s ;
+application/pdf; evince %s ;
+application/pgp-encrypted; gpg -d '%s'; copiousoutput;
+application/pgp-keys; gpg --import '%s'; copiousoutput;
+application/x-subrip; $EDITOR %s ;

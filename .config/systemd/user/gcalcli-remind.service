@@ -1,0 +1,7 @@
+[Unit]
+Description=Google Calendar reminders via gcalcli
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/linn/.local/bin/experimental/gcal-remind

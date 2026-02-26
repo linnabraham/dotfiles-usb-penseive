@@ -1,0 +1,24 @@
+# IUCAA
+# Receive options
+set imap_user = "`pass show iucaa/zimbra/linn | grep '^user:' | cut -d' ' -f2- | cut -d'@' -f1`"
+set imap_pass="`pass show iucaa/zimbra/linn | head -n 1`"
+set folder = 'imaps://daakghar.iucaa.in/'
+set spoolfile = +"INBOX"
+set record = +"Sent"
+set postponed = +"Drafts"
+set trash = +"Trash"
+
+
+named-mailboxes "Inbox  (IUCAA)" "+INBOX"
+named-mailboxes "Sent   (IUCAA)" "+Sent"
+named-mailboxes "Drafts (IUCAA)" "+Drafts"
+named-mailboxes "Trash  (IUCAA)" "+Trash"
+# Send options
+set smtp_url = smtp://daakghar.iucaa.in/
+set smtp_user = $imap_user
+set smtp_pass = $imap_pass
+set from = "`pass show iucaa/zimbra/linn | grep '^user:' | cut -d' ' -f2-`"
+set real_name = 'Linn Abraham'
+
+set header_cache=~/.cache/neomutt/headers/iucaa
+set message_cachedir=~/.cache/neomutt/bodies/iucaa
