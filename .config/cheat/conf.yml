@@ -66,6 +66,11 @@ cheatpaths:
 
   # If you have personalized cheatsheets, list them last. They will take
   # precedence over the more global cheatsheets.
+  - name: custom
+    path: /home/linn/.local/share/linn/cheatsheets/custom
+    tags: [ custom ]
+    readonly: false
+
   - name: personal
     path: /home/linn/.local/share/linn/cheatsheets/personal
     tags: [ personal ]
