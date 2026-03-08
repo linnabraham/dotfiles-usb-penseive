@@ -1,0 +1,9 @@
+[user]
+	email = linn.official@gmail.com
+	name = linnabraham
+[http]
+	version = HTTP/1.1
+	sslBackend = openssl
+	sslVerify = true
+[credential]
+	helper = cache --timeout=3600
