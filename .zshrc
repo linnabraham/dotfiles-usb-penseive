@@ -3,6 +3,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 [ -f $XDG_CONFIG_HOME/shortcutrc ] && source $XDG_CONFIG_HOME/shortcutrc
 alias vim='nvim'
 alias v='nvim'
+alias vi='nvim'
 alias g='git'
 alias gsu='git status -uno'
 alias gs='git status'
@@ -76,3 +77,4 @@ export LINES
 function wedit(){
     $EDITOR $(which $1)
 }
+export PATH="$HOME/.npm-global/bin:$PATH"

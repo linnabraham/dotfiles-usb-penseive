@@ -7,7 +7,7 @@ Plug 'tpope/vim-commentary'
 Plug 'SirVer/ultisnips' "| Plug 'honza/vim-snippets'
 Plug 'preservim/nerdtree'
 "Plug 'dense-analysis/ale' " Latex linting
-Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'} "live preview for markdown
+" Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'} "live preview for markdown
 Plug 'jamessan/vim-gnupg' "gpg encrypted notes
 Plug 'lewis6991/gitsigns.nvim' "show git changes in line
 Plug 'stevearc/oil.nvim'
@@ -49,7 +49,7 @@ set relativenumber
 set listchars=tab:\|\ ,trail:·
 set list " Show listchars
 " use my custom snippets in place of the default
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/plugged/my-snippets/']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.local/share/linn/my-snippets/']
 let g:UltiSnipsExpandTrigger       = '<Tab>'    " use Tab to expand snippets
 let g:UltiSnipsJumpForwardTrigger  = '<Tab>'    " use Tab to move forward through tabstops
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'  " use Shift-Tab to move backward through tabstops
