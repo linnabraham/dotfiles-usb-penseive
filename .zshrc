@@ -21,6 +21,7 @@ alias m='neomutt'
 alias bm='bashmount'
 alias xn='source tomb-mount && cd $NOTES_TOMB'
 alias here='printf '\''cd "%s"'\'' "$(pwd)" | wl-copy'
+alias sc='scrcpy --legacy-paste --video-codec=h265 --max-size=1920 --max-fps=60 --no-audio --keyboard=aoa'
 export EDITOR=/usr/bin/nvim
 export NOTES_TOMB=/run/media/$USER/notesbox
 
