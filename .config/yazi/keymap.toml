@@ -5,6 +5,7 @@
 [mgr]
 
 keymap = [
+    { on = "R", run = "shell --orphan 'ripdrag %s'", desc = "Drag selected files" },
 	{ on = "<Esc>", run = "escape",             desc = "Exit visual mode, clear selection, or cancel search" },
 	{ on = "<C-[>", run = "escape",             desc = "Exit visual mode, clear selection, or cancel search" },
 	{ on = "q",     run = "quit",               desc = "Quit the process" },
