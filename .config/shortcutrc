@@ -5,3 +5,4 @@ alias cfm='$EDITOR $HOME/.config/neomutt/neomuttrc'
 alias cfn='$EDITOR $HOME/.config/nvim/init.vim'
 alias cfz='$EDITOR $HOME/.zshrc'
 alias cb="cd $HOME/.local/bin/ && ls "
+alias cfw='$EDITOR $HOME/.config/niri/config.kdl'
