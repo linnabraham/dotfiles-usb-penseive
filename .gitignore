@@ -4,5 +4,7 @@
 # Allow all files/directories inside .config
 !.config/
 
+!projects/
+
 # Exclude the Brave directory
 .config/BraveSoftware/
