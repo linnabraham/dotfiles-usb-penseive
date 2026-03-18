@@ -1,0 +1,35 @@
+[/home/linn/projects/ledger-data]
+checkout = git clone git@github.com:linnabraham/ledger-data.git
+
+[/home/linn/projects/TexNotes]
+checkout = git clone --branch dev git@github.com:linnabraham/TexNotes.git
+
+[/home/linn/projects/TexNotes/notes]
+checkout = git clone git@github.com:linnabraham/notes.git
+
+[/home/linn/projects/daily-notes]
+checkout = git clone git@github.com:linnabraham/daily-notes.git
+
+[/home/linn/projects/linn-thesis-overleaf]
+checkout = git clone https://git@git.overleaf.com/67c007bed66da5b471a3142b linn-thesis-overleaf
+
+[/home/linn/projects/linn-thesis-github]
+checkout = git clone git@github.com:linnabraham/phd-thesis.git linn-thesis-github
+
+[/home/linn/projects/swisscheeseHI-notes]
+checkout = git clone https://git@git.overleaf.com/66fa371caa38c4286d4f706f swisscheeseHI-notes
+
+[/home/linn/projects/swisscheeseHI-paperdraft]
+checkout = git clone https://git@git.overleaf.com/664ad81ef8eecd8d168d2761 swisscheeseHI-paperdraft
+
+[/home/linn/projects/solar-paperdraft]
+checkout = git clone https://git@git.overleaf.com/65cc437366250c9c856e6982 solar-paperdraft
+
+[/home/linn/projects/solar-notes]
+checkout = git clone https://git@git.overleaf.com/66e6963c069cec0d1c9f04a6 solar-notes
+
+[/home/linn/projects/solar-work-journal]
+checkout = git clone git@github.com:linnabraham/work-journal-private solar-work-journal
+
+[/home/linn/projects/linn-latex-cv]
+checkout = git clone git@github.com:linnabraham/my-CV.git linn-latex-cv
