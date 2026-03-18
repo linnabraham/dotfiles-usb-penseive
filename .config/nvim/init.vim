@@ -3,6 +3,7 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lervag/vimtex'
 "Plug 'preservim/nerdcommenter' " For code commenting powers
+Plug 'folke/zen-mode.nvim'
 Plug 'tpope/vim-commentary'
 Plug 'SirVer/ultisnips' "| Plug 'honza/vim-snippets'
 Plug 'preservim/nerdtree'
@@ -16,6 +17,18 @@ Plug 'nvim-tree/nvim-web-devicons' " Optional: for file icons
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 call plug#end()
+
+lua << EOF
+require("zen-mode").setup({
+  window = {
+    width = 0.9,
+    options = {
+      number = false,
+      relativenumber = false,
+    },
+  },
+})
+EOF
 
 " 2. The Lua Initialization
 lua << EOF
