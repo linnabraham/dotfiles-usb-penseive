@@ -1,0 +1,8 @@
+--format bestaudio
+--extract-audio
+--audio-format opus
+--audio-quality 0
+--output ~/Music/incoming/%(title)s [%(id)s].opus
+--download-archive ~/Music/.archive.txt
+--embed-thumbnail
+--add-metadata
