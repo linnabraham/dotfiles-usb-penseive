@@ -68,7 +68,7 @@ dir_abbrev() {
   [[ ${#parts} -gt 0 ]] && out+="${parts[-1]}"
   echo -n $out
 }
-PROMPT='$(dir_abbrev) %# '
+PROMPT='$(dir_abbrev)%F{cyan}@%f%m %# '
 # temporary fix for kitty and less conflict
 #export PAGER="env TERM=xterm-256color less"
 export TERM=xterm-256color
