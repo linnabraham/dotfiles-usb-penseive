@@ -11,6 +11,7 @@ alias ga='git add'
 alias gc='git commit'
 alias gcm='git commit -m'
 alias gp='git push'
+alias gpf='git pull --ff-only'
 alias gd='git diff'
 alias gl='git log --oneline'
 alias glf='git log --graph --pretty=format:"%C(auto)%h%C(reset) %ad %C(auto)%d%C(reset) %s" --date=format:"%b %d, %Y"'
@@ -23,6 +24,7 @@ alias bm='bashmount'
 alias xn='source tomb-mount && cd $NOTES_TOMB'
 alias here='printf '\''cd "%s"'\'' "$(pwd)" | wl-copy'
 alias sc='scrcpy --legacy-paste --video-codec=h265 --max-size=1920 --max-fps=60 --no-audio --keyboard=aoa'
+alias mc='mc --skin=darkfar'
 export EDITOR=/usr/bin/nvim
 export NOTES_TOMB=/run/media/$USER/notesbox
 
@@ -68,7 +70,7 @@ dir_abbrev() {
   [[ ${#parts} -gt 0 ]] && out+="${parts[-1]}"
   echo -n $out
 }
-PROMPT='$(dir_abbrev)%F{cyan}@%f%m %# '
+PROMPT='%m:$(dir_abbrev)%F{cyan}%f %# '
 # temporary fix for kitty and less conflict
 #export PAGER="env TERM=xterm-256color less"
 export TERM=xterm-256color
