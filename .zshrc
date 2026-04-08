@@ -70,7 +70,24 @@ dir_abbrev() {
   [[ ${#parts} -gt 0 ]] && out+="${parts[-1]}"
   echo -n $out
 }
-PROMPT='%m:$(dir_abbrev)%F{cyan}%f %# '
+# Add git info to PROMPT
+parse_git_hash() {
+if git rev-parse --is-inside-work-tree &>/dev/null; then git rev-parse --short HEAD 2>/dev/null ;fi
+}
+
+# Auto-install git-prompt.sh if missing
+GIT_PROMPT="$HOME/.git-prompt.sh"
+
+if [ ! -f "$GIT_PROMPT" ]; then
+    echo "Installing git-prompt.sh..."
+    curl -fLo "$GIT_PROMPT" \
+        https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+fi
+
+source $GIT_PROMPT
+
+PROMPT="\$(parse_git_hash)\$(GIT_PS1_SHOWUNTRACKEDFILES=1 GIT_PS1_SHOWDIRTYSTATE=1 __git_ps1)$(dir_abbrev) %# "
+
 # temporary fix for kitty and less conflict
 #export PAGER="env TERM=xterm-256color less"
 export TERM=xterm-256color
