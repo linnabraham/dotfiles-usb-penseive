@@ -86,7 +86,7 @@ fi
 
 source $GIT_PROMPT
 
-PROMPT="\$(parse_git_hash)\$(GIT_PS1_SHOWUNTRACKEDFILES=1 GIT_PS1_SHOWDIRTYSTATE=1 __git_ps1)$(dir_abbrev) %# "
+PROMPT="\$(parse_git_hash)\$(GIT_PS1_SHOWUNTRACKEDFILES=1 GIT_PS1_SHOWDIRTYSTATE=1 __git_ps1)\$(dir_abbrev) %# "
 
 # temporary fix for kitty and less conflict
 #export PAGER="env TERM=xterm-256color less"
