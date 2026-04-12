@@ -8,3 +8,4 @@
 
 # Exclude the Brave directory
 .config/BraveSoftware/
+.config/Code/
