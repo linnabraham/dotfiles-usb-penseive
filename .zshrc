@@ -99,3 +99,15 @@ function wedit(){
     $EDITOR $(which $1)
 }
 export PATH="$HOME/.npm-global/bin:$PATH"
+
+tunnel() {
+    local host="${1}"
+    local port="${2:-8888}"
+
+    if [ -z "$host" ]; then
+        echo "Usage: tunnel <host> [port]"
+        return 1
+    fi
+
+    ssh -fNL ${port}:localhost:${port} "$host"
+}
