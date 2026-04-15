@@ -387,6 +387,8 @@ binds {
     Mod+slash hotkey-overlay-title="Music chooser" { spawn-sh "wrapper-mpc-control"; }
     Mod+ctrl+slash hotkey-overlay-title="control mpd" { spawn-sh "mpdmenu.sh"; }
     Mod+Shift+T hotkey-overlay-title="Toggle centering: custom" { spawn "toggle-center.sh"; }
+    Mod+B hotkey-overlay-title="Rofi file browser: custom" { spawn-sh "rofi -show file-browser-extended -file-browser-dir /home/linn/"; }
+
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
